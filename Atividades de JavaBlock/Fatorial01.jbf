@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="sasaw" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="40" posX="0.0" posY="0.0" zoom="4"/>
+    <blocks>
+      <block id="1" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-370.0" posY="-90.0"/>
+        <comment>Start</comment>
+        <connect ID="3"/>
+      </block>
+      <block id="2" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-60.0" posY="160.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="3" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-260.0" posY="-90.0"/>
+        <content>x=ReadNumber("Nuumero:");	;	</content>
+        <comment>"Nuumero:";	x ;	</comment>
+        <connect ID="4"/>
+        <io array="0" inputType="0" ioType="2" message="Nuumero:" variable="x"/>
+      </block>
+      <block id="4" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-160.0" posY="-90.0"/>
+        <content>y=x&#13;;	n=x</content>
+        <connect ID="5"/>
+      </block>
+      <block id="5" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-60.0" posY="-90.0"/>
+        <content>y=(y-1)</content>
+        <connect ID="6"/>
+      </block>
+      <block id="6" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-60.0" posY="30.0"/>
+        <content>y==1</content>
+        <connect ID="8" value="true"/>
+        <connect ID="7" value="false"/>
+      </block>
+      <block id="7" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-190.0" posY="30.0"/>
+        <content>n=n*y</content>
+        <connect ID="5"/>
+      </block>
+      <block id="8" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-60.0" posY="110.0"/>
+        <content>Writeln("O fatorial é:  " + (getValueOf(n)));	;	</content>
+        <comment>"O fatorial é:  " +n</comment>
+        <connect ID="2"/>
+        <io ioType="1" message="O fatorial é:  " messageSuffix="" newLine="true" variable="n"/>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>

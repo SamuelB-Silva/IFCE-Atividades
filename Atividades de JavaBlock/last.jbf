@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="Alunos" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="0.0" posY="1.0" zoom="4"/>
+    <blocks>
+      <block id="1" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-470.0" posY="-250.0"/>
+        <comment>Start</comment>
+        <connect ID="3"/>
+      </block>
+      <block id="2" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="440.0" posY="270.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="3" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-350.0" posY="-250.0"/>
+        <content>n=0&#13;;	p=0&#13;;	m=0&#13;;	a1=0&#13;;	a2=0</content>
+        <connect ID="16"/>
+      </block>
+      <block id="4" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-110.0" posY="-250.0"/>
+        <content>a=ReadNumber("Valor de A");	;	</content>
+        <comment>"Valor de A";	a ;	</comment>
+        <connect ID="5"/>
+        <io array="0" inputType="0" ioType="2" message="Valor de A" variable="a"/>
+      </block>
+      <block id="5" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-110.0" posY="-150.0"/>
+        <content>b=ReadNumber("Valor de B");	;	</content>
+        <comment>"Valor de B";	b ;	</comment>
+        <connect ID="6"/>
+        <io array="0" inputType="0" ioType="2" message="Valor de B" variable="b"/>
+      </block>
+      <block id="6" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-110.0" posY="-60.0"/>
+        <content>x=ReadNumber("Digite o número de x ");	;	</content>
+        <comment>"Digite o número de x ";	x ;	</comment>
+        <connect ID="7"/>
+        <io array="0" inputType="0" ioType="2" message="Digite o número de x " variable="x"/>
+      </block>
+      <block id="7" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="110.0" posY="-60.0"/>
+        <content>x&lt;0</content>
+        <connect ID="8" value="true"/>
+        <connect ID="9" value="false"/>
+      </block>
+      <block id="8" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="270.0" posY="-60.0"/>
+        <content>M=m/p;	percent=100*(a2/p)</content>
+        <connect ID="11"/>
+      </block>
+      <block id="9" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="110.0" posY="130.0"/>
+        <content>p=p+1;	m=m+x;	</content>
+        <connect ID="10"/>
+      </block>
+      <block id="10" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-110.0" posY="130.0"/>
+        <content>x&gt;a&#13;;	x&lt;b</content>
+        <connect ID="15" value="true"/>
+        <connect ID="18" value="false"/>
+      </block>
+      <block id="11" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="440.0" posY="-60.0"/>
+        <content>Writeln("Acabou" + (getValueOf(x)));	;	</content>
+        <comment>"Acabou" +x</comment>
+        <connect ID="12"/>
+        <io ioType="1" message="Acabou" messageSuffix="" newLine="true" variable="x"/>
+      </block>
+      <block id="12" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="440.0" posY="0.0"/>
+        <content>Writeln("Números maiores que x foram digitados: " + (getValueOf(p)));	;	</content>
+        <comment>"Números maiores que x foram digitados: " +p</comment>
+        <connect ID="17"/>
+        <io ioType="1" message="Números maiores que x foram digitados: " messageSuffix="" newLine="true" variable="p"/>
+      </block>
+      <block id="13" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="440.0" posY="150.0"/>
+        <content>Writeln("Sua média é:" + (getValueOf(M)));	;	</content>
+        <comment>"Sua média é:" +M</comment>
+        <connect ID="14"/>
+        <io ioType="1" message="Sua média é:" messageSuffix="" newLine="true" variable="M"/>
+      </block>
+      <block id="14" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="440.0" posY="200.0"/>
+        <content>Writeln("Foram digitados essa quantidade entre A e B:" + (getValueOf(a1)));	;	</content>
+        <comment>"Foram digitados essa quantidade entre A e B:" +a1</comment>
+        <connect ID="2"/>
+        <io ioType="1" message="Foram digitados essa quantidade entre A e B:" messageSuffix="" newLine="true" variable="a1"/>
+      </block>
+      <block id="15" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-240.0" posY="130.0"/>
+        <content>a1=a1+1</content>
+        <connect ID="18"/>
+      </block>
+      <block id="16" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-230.0" posY="-250.0"/>
+        <content>y=ReadNumber("y?");	;	</content>
+        <comment>"y?";	y ;	</comment>
+        <connect ID="4"/>
+        <io array="0" inputType="0" ioType="2" message="y?" variable="y"/>
+      </block>
+      <block id="17" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="440.0" posY="80.0"/>
+        <content>Writeln(" % dos números maiores que x: " + (getValueOf(percent)));	;	</content>
+        <comment>" % dos números maiores que x: " +percent</comment>
+        <connect ID="13"/>
+        <io ioType="1" message=" % dos números maiores que x: " messageSuffix="" newLine="true" variable="percent"/>
+      </block>
+      <block id="18" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-110.0" posY="30.0"/>
+        <content>x&gt;y</content>
+        <connect ID="19" value="true"/>
+        <connect ID="6" value="false"/>
+      </block>
+      <block id="19" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-300.0" posY="30.0"/>
+        <content>a2=a2+1</content>
+        <connect ID="20"/>
+      </block>
+      <block id="20" type="JUMP">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-300.0" posY="-60.0"/>
+        <content> </content>
+        <connect ID="6"/>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>
